@@ -58,11 +58,17 @@ export function getBlogPostBySlug(slug) {
 }
 
 export function formatBlogPostForDisplay(post) {
+  // Fix coverImage path - strip /public prefix if present
+  let coverImage = post.frontmatter.coverImage || post.frontmatter.image || '/agency.PNG';
+  if (coverImage.startsWith('/public/')) {
+    coverImage = coverImage.replace('/public/', '/');
+  }
+
   return {
     slug: post.slug,
     title: post.frontmatter.title || 'Untitled',
     excerpt: post.frontmatter.excerpt || post.frontmatter.description || '',
-    coverImage: post.frontmatter.coverImage || post.frontmatter.image || '/agency.PNG',
+    coverImage: coverImage,
     category: post.frontmatter.category || 'General',
     date: post.frontmatter.date ? new Date(post.frontmatter.date).toLocaleDateString('en-US', {
       month: 'short',
