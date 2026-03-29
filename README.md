@@ -1,8 +1,8 @@
-# Abdullah Agency - Next.js, Tailwind CSS & Framer Motion
+# Flinkeo - Next.js, Tailwind CSS & Framer Motion
 
-![Abdullah Agency](/public/agency.PNG)
+![Flinkeo](/public/agency.PNG)
 
-Abdullah Agency is a stunning multi-page agency website template developed using Next.js, Tailwind CSS, and Framer Motion. Designed and built by the talented Tailwind CSS team, this template offers a sleek and minimalist appearance while boasting engaging interactive elements and captivating animations powered by Framer Motion.
+Flinkeo is a stunning multi-page agency website template developed using Next.js, Tailwind CSS, and Framer Motion. Designed and built by the talented Tailwind CSS team, this template offers a sleek and minimalist appearance while boasting engaging interactive elements and captivating animations powered by Framer Motion.
 
 ## Features
 
@@ -15,10 +15,10 @@ Abdullah Agency is a stunning multi-page agency website template developed using
 
 ## Getting Started
 
-To run the Abdullah Agency website locally, follow these steps:
+To run the Flinkeo website locally, follow these steps:
 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/abdullah-agency.git
+   git clone https://github.com/your-username/flinkeo.git
    ```
