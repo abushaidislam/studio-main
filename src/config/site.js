@@ -4,7 +4,7 @@ export const siteConfig = {
     "Flinkeo designs, builds, and refines modern digital experiences for ambitious teams.",
   url: "https://flinkeo.vercel.app",
   image: "/agency.PNG",
-  email: "hello@flinkeo.com",
+  email: "abushaidislam7@gmail.com",
   socials: [
     {
       title: "YouTube",
