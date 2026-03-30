@@ -15,41 +15,38 @@ const Values = () => {
       </div>
       <SectionIntro
         eyebrow="Our values"
-        title="Balancing reliability and innovation"
+        title="Reliable execution with room for better ideas"
       >
         <p>
-          We strive to stay at the forefront of emerging trends and
-          technologies, while completely ignoring them and forking that old
-          Rails project we feel comfortable using. We stand by our core values
-          to justify that decision.
+          Flinkeo balances thoughtful planning with fast delivery so teams can
+          make progress without giving up quality, clarity, or adaptability.
         </p>
       </SectionIntro>
       <Container className="mt-24">
         <GridList>
-          <GridListItem title="Meticulous">
-            The first part of any partnership is getting our designer to put
-            your logo in our template. The second step is getting them to do the
-            colors.
+          <GridListItem title="Intentional">
+            We make decisions against the project goal, not just what looks
+            impressive in isolation.
           </GridListItem>
-          <GridListItem title="Efficient">
-            We pride ourselves on never missing a deadline which is easy because
-            most of the work was done years ago.
+          <GridListItem title="Responsive">
+            Feedback is easier to use when it arrives quickly and with enough
+            context to act on it.
           </GridListItem>
           <GridListItem title="Adaptable">
-            Every business has unique needs and our greatest challenge is
-            shoe-horning those needs into something we already built.
+            Strong systems leave room for change without forcing a full rebuild
+            every time priorities shift.
           </GridListItem>
-          <GridListItem title="Honest">
-            We are transparent about all of our processes, banking on the simple
-            fact our clients never actually read anything.
+          <GridListItem title="Transparent">
+            We share tradeoffs early, keep status visible, and document the
+            decisions that shape the work.
           </GridListItem>
-          <GridListItem title="Loyal">
-            We foster long-term relationships with our clients that go beyond
-            just delivering a product, allowing us to invoice them for decades.
+          <GridListItem title="Collaborative">
+            The best outcomes come from treating product, content, design, and
+            engineering as part of the same conversation.
           </GridListItem>
-          <GridListItem title="Innovative">
-            The technological landscape is always evolving and so are we. We are
-            constantly on the lookout for new open source projects to clone.
+          <GridListItem title="Crafted">
+            We care about polish, but only when it supports clarity, usability,
+            and measurable results.
           </GridListItem>
         </GridList>
       </Container>

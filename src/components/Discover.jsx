@@ -8,36 +8,30 @@ const Discover = () => {
     <Section title="Discover" image={{ src: imageWhiteboard, shape: 1 }}>
       <div className="space-y-6 text-base text-neutral-600">
         <p>
-          We work closely with our clients to understand their{" "}
-          <strong className="font-semibold text-neutral-950">needs</strong> and
-          goals, embedding ourselves in their every day operations to understand
-          what makes their business tick.
+          We work closely with clients to understand the business context,
+          audience expectations, and delivery constraints before making surface
+          level design decisions.
         </p>
         <p>
-          Our team of private investigators shadow the company director’s for
-          several weeks while our account managers focus on going through their
-          trash. Our senior security experts then perform social engineering
-          hacks to gain access to their{" "}
-          <strong className="font-semibold text-neutral-950">business</strong>
-          accounts — handing that information over to our forensic accounting
-          team.
+          That discovery phase helps us define the right scope, identify the
+          most important user journeys, and spot the technical or content risks
+          that could slow a launch later.
         </p>
         <p>
-          Once the full audit is complete, we report back with a comprehensive
-          <strong className="font-semibold text-neutral-950">plan</strong> and,
-          more importantly, a budget.
+          The result is a practical plan that gives the team direction, shared
+          language, and a clear path into production.
         </p>
       </div>
       <h3 className="mt-12 font-display text-base font-semibold text-neutral-950">
         Included in this phase
       </h3>
       <TagList className="mt-4">
-        <TagListItem>In-depth questionnaires</TagListItem>
-        <TagListItem>Feasibility studies</TagListItem>
-        <TagListItem>Blood samples</TagListItem>
-        <TagListItem>Employee surveys</TagListItem>
-        <TagListItem>Proofs-of-concept</TagListItem>
-        <TagListItem>Forensic audit</TagListItem>
+        <TagListItem>Stakeholder interviews</TagListItem>
+        <TagListItem>Positioning workshops</TagListItem>
+        <TagListItem>UX audits</TagListItem>
+        <TagListItem>Content planning</TagListItem>
+        <TagListItem>Technical scoping</TagListItem>
+        <TagListItem>Prototype reviews</TagListItem>
       </TagList>
     </Section>
   );

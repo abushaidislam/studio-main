@@ -7,30 +7,20 @@ import {
   BsYoutube,
   BsLinkedin,
 } from "react-icons/bs";
+import { siteConfig } from "@/config/site";
 
-export const SocialMediaProfiles = [
-  {
-    title: "Youtube",
-    href: "https://www.youtube.com/watch?v=eAswnbWptBM",
-    icon: BsYoutube,
-  },
-  { title: "GitHub", href: "https://github.com/chrhi", icon: BsGithub },
-  {
-    title: "Facebook",
-    href: "https://www.facebook.com/profile.php?id=100010070348939",
-    icon: BsFacebook,
-  },
-  {
-    title: "linkedin",
-    href: "https://www.linkedin.com/in/chehri-abdellah-4a8858267/",
-    icon: BsLinkedin,
-  },
-  {
-    title: "Twitter",
-    href: "https://twitter.com/KING_IN_JUNGLE",
-    icon: BsTwitter,
-  },
-];
+const iconMap = {
+  youtube: BsYoutube,
+  github: BsGithub,
+  facebook: BsFacebook,
+  linkedin: BsLinkedin,
+  twitter: BsTwitter,
+};
+
+export const SocialMediaProfiles = siteConfig.socials.map((profile) => ({
+  ...profile,
+  icon: iconMap[profile.icon],
+}));
 
 const SocialMedia = ({ className, invert = false }) => {
   return (

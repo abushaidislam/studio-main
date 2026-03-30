@@ -2,50 +2,17 @@
 
 import { motion } from "framer-motion";
 
-const MarqueeItem = ({ children }) => {
+const CategoryBox = ({ category }) => {
   return (
-    <div className="mx-4 flex-shrink-0">
-      {children}
-    </div>
-  );
-};
-
-const Marquee = ({ children, direction = "left", speed = 30, pauseOnHover = true }) => {
-  return (
-    <div
-      className={`
-        group
-        flex
-        overflow-hidden
-        [mask-image:linear-gradient(to_right,transparent,white_10%,white_90%,transparent)]
-        ${pauseOnHover ? "hover:[animation-play-state:paused]" : ""}
-      `}
+    <motion.div
+      whileHover={{ scale: 1.02, backgroundColor: "#f5f5f5" }}
+      transition={{ duration: 0.2 }}
+      className="flex items-center justify-center px-8 py-6 bg-white border border-neutral-200 min-w-[140px] cursor-pointer"
     >
-      <motion.div
-        className="flex shrink-0 items-center"
-        animate={{
-          x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
-        }}
-        transition={{
-          x: {
-            duration: speed,
-            repeat: Infinity,
-            ease: "linear",
-          },
-        }}
-      >
-        {children}
-        {children}
-      </motion.div>
-    </div>
-  );
-};
-
-const CategoryTag = ({ category }) => {
-  return (
-    <span className="inline-flex items-center px-6 py-3 rounded-full bg-neutral-100 hover:bg-neutral-200 text-neutral-900 text-sm font-medium transition-colors duration-200 cursor-pointer whitespace-nowrap">
-      {category}
-    </span>
+      <span className="text-neutral-900 font-medium text-sm whitespace-nowrap">
+        {category}
+      </span>
+    </motion.div>
   );
 };
 
@@ -59,43 +26,56 @@ const BlogMarquee = ({ categories = [] }) => {
     "UI/UX",
     "Technology",
     "Innovation",
-    "Business",
-    "Creative",
   ];
 
   const items = categories.length > 0 ? categories : defaultCategories;
 
   return (
-    <section className="py-12 md:py-16 border-y border-neutral-200/60 bg-neutral-50/50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-8">
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center text-sm font-medium text-neutral-500 uppercase tracking-wider"
-        >
-          Browse by Category
-        </motion.p>
-      </div>
+    <section className="py-0 border-y border-neutral-200 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row -mx-6 lg:-mx-8">
+          {/* Left side - Text label */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center justify-center lg:justify-start px-6 lg:px-8 py-6 lg:py-0 border-b lg:border-b-0 lg:border-r border-neutral-200 bg-white"
+          >
+            <p className="text-sm text-neutral-600 leading-relaxed">
+              Trusted by{" "}
+              <span className="text-orange-500 font-medium">80,000+</span>
+              <br />
+              <span className="text-orange-500 font-medium">companies</span> of all sizes
+            </p>
+          </motion.div>
 
-      <Marquee speed={40} pauseOnHover>
-        {items.map((category, index) => (
-          <MarqueeItem key={`${category}-${index}`}>
-            <CategoryTag category={category} />
-          </MarqueeItem>
-        ))}
-      </Marquee>
-
-      {/* Second row - opposite direction */}
-      <div className="mt-4">
-        <Marquee direction="right" speed={35} pauseOnHover>
-          {items.slice().reverse().map((category, index) => (
-            <MarqueeItem key={`reverse-${category}-${index}`}>
-              <CategoryTag category={category} />
-            </MarqueeItem>
-          ))}
-        </Marquee>
+          {/* Right side - Scrolling categories */}
+          <div className="flex-1 overflow-hidden">
+            <motion.div
+              className="flex"
+              animate={{
+                x: ["0%", "-50%"],
+              }}
+              transition={{
+                x: {
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: "linear",
+                },
+              }}
+            >
+              {/* First set of items */}
+              {items.map((category, index) => (
+                <CategoryBox key={`cat-1-${index}`} category={category} />
+              ))}
+              {/* Duplicate for seamless loop */}
+              {items.map((category, index) => (
+                <CategoryBox key={`cat-2-${index}`} category={category} />
+              ))}
+            </motion.div>
+          </div>
+        </div>
       </div>
     </section>
   );

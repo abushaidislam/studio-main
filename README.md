@@ -1,24 +1,42 @@
-# Flinkeo - Next.js, Tailwind CSS & Framer Motion
+# Flinkeo
+
+Flinkeo is a multi-page agency website built with Next.js, Tailwind CSS, Framer Motion, and MDX-powered blog content. The project is structured around a branded marketing site with supporting content pages, contact flows, and editorial posts.
 
 ![Flinkeo](/public/agency.PNG)
 
-Flinkeo is a stunning multi-page agency website template developed using Next.js, Tailwind CSS, and Framer Motion. Designed and built by the talented Tailwind CSS team, this template offers a sleek and minimalist appearance while boasting engaging interactive elements and captivating animations powered by Framer Motion.
+## Stack
 
-## Features
+- Next.js 13 App Router
+- Tailwind CSS
+- Framer Motion
+- MDX blog content
 
-- Beautifully designed agency website template.
-- Built using Tailwind CSS and Next.js for a seamless development experience.
-- Enhanced with delightful animations and transitions through Framer Motion.
-- Easy-to-update case studies and blog posts with MDX.
-- Production-ready and highly customizable for your agency's specific needs.
-- A valuable resource for learning how to build websites with Tailwind CSS and React.
+## Project highlights
 
-## Getting Started
+- Branded marketing pages for home, about, process, work, contact, and blog
+- Shared metadata and site configuration for consistent Flinkeo identity
+- Email-based contact and newsletter flows using `mailto:`
+- Blog content sourced from `content/blog`
 
-To run the Flinkeo website locally, follow these steps:
+## Getting started
 
-1. **Clone the repository:**
+1. Install dependencies:
 
    ```bash
-   git clone https://github.com/your-username/flinkeo.git
+   npm install
    ```
+
+2. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Open `http://localhost:3000`
+
+## Content
+
+- Marketing pages live under `src/app`
+- Reusable UI sections live under `src/components`
+- Blog posts live under `content/blog`
+- Shared site identity and contact details live in `src/config/site.js`

@@ -1,15 +1,68 @@
+export const siteConfig = {
+  name: "Flinkeo",
+  description:
+    "Flinkeo designs, builds, and refines modern digital experiences for ambitious teams.",
+  url: "https://flinkeo.vercel.app",
+  image: "/agency.PNG",
+  email: "hello@flinkeo.com",
+  socials: [
+    {
+      title: "YouTube",
+      href: "https://www.youtube.com/@flinkeo",
+      icon: "youtube",
+    },
+    {
+      title: "GitHub",
+      href: "https://github.com/flinkeo",
+      icon: "github",
+    },
+    {
+      title: "Facebook",
+      href: "https://www.facebook.com/flinkeo",
+      icon: "facebook",
+    },
+    {
+      title: "LinkedIn",
+      href: "https://www.linkedin.com/company/flinkeo",
+      icon: "linkedin",
+    },
+    {
+      title: "Twitter",
+      href: "https://twitter.com/flinkeo",
+      icon: "twitter",
+    },
+  ],
+  offices: [
+    {
+      name: "Dhaka",
+      lines: ["Remote-first delivery hub", "Client sessions by appointment"],
+    },
+    {
+      name: "London",
+      lines: ["Strategy and partnership meetings", "Available for UK and EU teams"],
+    },
+  ],
+  contactEmails: [
+    ["General inquiries", "hello@flinkeo.com"],
+    ["Partnerships", "partnerships@flinkeo.com"],
+  ],
+};
+
 export function constructMetadata({
-  title = "Flinkeo",
-  description = "Flinkeo is an open-source website.",
-  image = "/agency.PNG",
+  title = siteConfig.name,
+  description = siteConfig.description,
+  image = siteConfig.image,
   icons = "/favicon.ico",
   noIndex = false,
-}) {
+} = {}) {
+  const socialTitle =
+    title === siteConfig.name ? title : `${title} | ${siteConfig.name}`;
+
   return {
     title,
     description,
     openGraph: {
-      title,
+      title: socialTitle,
       description,
       images: [
         {
@@ -19,13 +72,13 @@ export function constructMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title,
+      title: socialTitle,
       description,
       images: [image],
-      creator: "@KING_IN_JUNGLE",
+      creator: "@flinkeo",
     },
     icons,
-    metadataBase: new URL("https://flinkeo.vercel.app/"),
+    metadataBase: new URL(siteConfig.url),
     themeColor: "#FFF",
     ...(noIndex && {
       robots: {

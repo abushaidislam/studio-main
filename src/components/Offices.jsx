@@ -1,6 +1,7 @@
 import clsx from "clsx";
+import { siteConfig } from "@/config/site";
 
-function Office({ name, children, invert = false }) {
+function Office({ name, lines, invert = false }) {
   return (
     <address
       className={clsx(
@@ -12,7 +13,12 @@ function Office({ name, children, invert = false }) {
         {name}
       </strong>
       <br />
-      {children}
+      {lines.map((line) => (
+        <span key={line}>
+          {line}
+          <br />
+        </span>
+      ))}
     </address>
   );
 }
@@ -20,20 +26,11 @@ function Office({ name, children, invert = false }) {
 const Offices = ({ invert = false, ...props }) => {
   return (
     <ul role="list" {...props}>
-      <li>
-        <Office name="U.S.A" invert={invert}>
-          on bay mark
-          <br />
-          Newtown city of Las Vegas
-        </Office>
-      </li>
-      <li>
-        <Office name="London" invert={invert}>
-          13 long Street
-          <br />
-          Downtown, Allyway
-        </Office>
-      </li>
+      {siteConfig.offices.map((office) => (
+        <li key={office.name}>
+          <Office name={office.name} lines={office.lines} invert={invert} />
+        </li>
+      ))}
     </ul>
   );
 };
