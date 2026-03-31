@@ -8,6 +8,7 @@ import FadeIn from "@/components/FadeIn";
 import ContactSection from "@/components/ContactSection";
 import StylizedImage from "@/components/StylizedImage";
 import Button from "@/components/Button";
+import CpuArchitecture from "@/components/ui/cpu-architecture";
 import clsx from "clsx";
 import imageMeeting from "@/images/meeting.jpg";
 
@@ -694,17 +695,43 @@ const GlobalTradeAIAnalyticsPage = () => {
       {/* Technologies */}
       <Container className="mt-24 sm:mt-32">
         <FadeIn>
-          <div className="bg-neutral-50 rounded-3xl p-8 sm:p-12">
-            <h2 className="font-display text-3xl font-semibold text-neutral-950 mb-8 text-center">
-              Technology Stack
-            </h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {project.technologies.map((tech) => (
-                <div key={tech.name} className="bg-white rounded-xl p-4 text-center border border-neutral-100 hover:border-neutral-300 transition-colors duration-300">
-                  <p className="font-semibold text-neutral-950 text-sm">{tech.name}</p>
-                  <p className="text-xs text-neutral-500">{tech.category}</p>
+          <div className="bg-neutral-950 rounded-3xl p-8 sm:p-12 lg:p-16 text-white overflow-hidden">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left: CPU Architecture Animation */}
+              <div className="order-2 lg:order-1">
+                <div className="relative aspect-[2/1] w-full">
+                  <CpuArchitecture
+                    text="AI/ML"
+                    animateLines={true}
+                    animateText={true}
+                    animateMarkers={true}
+                    className="w-full h-full"
+                  />
                 </div>
-              ))}
+              </div>
+
+              {/* Right: Technology Stack Content */}
+              <div className="order-1 lg:order-2">
+                <h2 className="font-display text-3xl font-semibold mb-4">
+                  Technology Stack
+                </h2>
+                <p className="text-neutral-400 mb-8 leading-relaxed">
+                  A powerful ecosystem of modern technologies working in harmony to process 2.5TB of data daily, powering real-time analytics and AI-driven insights.
+                </p>
+
+                {/* Technology Grid */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                  {project.technologies.map((tech) => (
+                    <div
+                      key={tech.name}
+                      className="bg-white/5 backdrop-blur-sm rounded-xl p-3 text-center border border-white/10 hover:bg-white/10 transition-colors duration-300"
+                    >
+                      <p className="font-semibold text-white text-sm">{tech.name}</p>
+                      <p className="text-xs text-neutral-400">{tech.category}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </FadeIn>
