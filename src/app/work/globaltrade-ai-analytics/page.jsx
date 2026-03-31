@@ -283,11 +283,6 @@ const project = {
   ]
 };
 
-export const metadata = {
-  title: `${project.title} | Case Study`,
-  description: project.shortDescription,
-};
-
 // Component Definitions
 const StatusBadge = ({ status }) => {
   const styles = {
