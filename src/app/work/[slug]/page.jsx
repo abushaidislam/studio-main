@@ -102,7 +102,7 @@ const ProjectDetailPage = ({ params }) => {
         <Container className="mt-16">
           <FadeIn>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {project.keyMetrics.map((metric) => (
+              {(project.keyMetrics ?? []).map((metric) => (
                 <MetricCard key={metric.label} {...metric} />
               ))}
             </div>
@@ -162,7 +162,7 @@ const ProjectDetailPage = ({ params }) => {
                 <div>
                   <h2 className="font-display text-2xl font-semibold text-neutral-950 mb-8">Our Process</h2>
                   <div className="space-y-0">
-                    {project.process.map((phase, index) => (
+                    {(project.process ?? []).map((phase, index) => (
                       <ProcessPhase key={phase.phase} {...phase} index={index} />
                     ))}
                   </div>
@@ -173,7 +173,7 @@ const ProjectDetailPage = ({ params }) => {
               <div>
                 <h2 className="font-display text-2xl font-semibold text-neutral-950 mb-6">Key Results</h2>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  {project.results.map((result, index) => (
+                  {(project.results ?? []).map((result, index) => (
                     <div
                       key={index}
                       className="flex items-start gap-3 p-4 bg-neutral-50 rounded-xl"
@@ -192,7 +192,7 @@ const ProjectDetailPage = ({ params }) => {
                 <div>
                   <h2 className="font-display text-2xl font-semibold text-neutral-950 mb-4">Technologies Used</h2>
                   <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
+                    {(project.technologies ?? []).map((tech) => (
                       <span
                         key={tech}
                         className="px-4 py-2 bg-neutral-100 text-neutral-700 rounded-full text-sm font-medium"
@@ -269,7 +269,7 @@ const ProjectDetailPage = ({ params }) => {
                     Team
                   </h3>
                   <div className="flex flex-wrap gap-2">
-                    {project.team.map((member) => (
+                    {(project.team ?? []).map((member) => (
                       <span
                         key={member}
                         className="px-3 py-1 bg-white text-neutral-700 rounded-full text-sm border border-neutral-200"
@@ -288,7 +288,7 @@ const ProjectDetailPage = ({ params }) => {
                     Awards
                   </h3>
                   <ul className="space-y-2">
-                    {project.awards.map((award) => (
+                    {(project.awards ?? []).map((award) => (
                       <li key={award} className="flex items-center gap-2 text-sm text-neutral-700">
                         <svg className="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
